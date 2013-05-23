@@ -674,6 +674,7 @@ class CreateAccountRequest
 	/**
 	 * Boolean value, indicates whether user has agreed for a
 	 * particular agreement or not. 
+     * @array
 	 * @access public
 	 
 	 	 	 	 
@@ -2881,7 +2882,7 @@ class BusinessEntityForThirdPartyType
 	 * @access public
 	 
 	 	 	 	 
-	 * @var string 	 
+	 * @var NameType 	 
 	 */ 
 	public $name;
 
@@ -2970,7 +2971,17 @@ class BusinessEntityForThirdPartyType
 	 	 	 	 
 	 * @var string 	 
 	 */ 
-	public $incorporationPlaceOfIssue;
+	public $incorporationCountry;
+
+	/**
+	 * If third party is business, collect place of issue of
+	 * Incorporation. 
+	 * @access public
+	 
+	 	 	 	 
+	 * @var string 	 
+	 */ 
+	public $incorporationState;
 
 
 }

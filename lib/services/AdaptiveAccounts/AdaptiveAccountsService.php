@@ -15,7 +15,7 @@ class AdaptiveAccountsService extends PPBaseService {
 	protected static $SDK_NAME = "adaptiveaccounts-php-sdk";
 	
 	// SDK Version
-	protected static $SDK_VERSION = "2.4.101";
+	protected static $SDK_VERSION = "2.4.102";
 
 	public function __construct($config = null) {
 		parent::__construct(self::$SERVICE_NAME, 'NV', array('PPPlatformServiceHandler'), $config);

@@ -1,11 +1,15 @@
 # CHANGELOG
+
+## Version 2.4.102 - May 23, 2013
  
-## Version 2.4.101 - May 06, 2013
-
-   - Restructuring config file location. Updating installer script to reflect this.  
+   - Updated stubs for 102 release.
+   - Restructuring config file location. Updating installer script to reflect this.
    - Fix for dynamic configuration overwrite in previous release.
---------------------------------------------------------------------------------------------------   
+	
+You can see source code of this release in github under https://github.com/paypal/adaptiveaccounts-sdk-php/tree/v2.4.102.
 
+--------------------------------------------------------------------------------------------------
+ 
 ## Version 2.3.101 - April 30, 2013
 
 	- Updated stubs for 101 release
