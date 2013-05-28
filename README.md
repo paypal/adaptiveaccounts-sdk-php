@@ -18,7 +18,7 @@ If using composer, run `composer update` from the samples folder. Otherwise, run
 ```bash
    
     cd samples   
-    curl  https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable/samples/install.php | php    
+    curl  https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable-php5.3/samples/install.php | php    
         OR        
     php install.php
 ```
@@ -34,7 +34,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/adaptiveaccounts-sdk-php":"v2.4.101"
+        "paypal/adaptiveaccounts-sdk-php":"v3.4.102"
     }
 }
 ```
