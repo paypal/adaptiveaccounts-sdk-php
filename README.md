@@ -34,7 +34,7 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/adaptiveaccounts-sdk-php":"v2.4.101"
+        "paypal/adaptiveaccounts-sdk-php":"v2.4.103"
     }
 }
 ```
@@ -42,22 +42,30 @@ To use the SDK,
    * Install the SDK as a dependency using composer or the install.php script.
    * Require `vendor/autoload.php` OR `PPBootStrap.php` in your application depending on whether you used composer or the custom installer.
    * Choose how you would like to configure the SDK - You can either
-      * Create a `sdk_config.ini` file and set the PP_CONFIG_PATH constant to point to the directory where this file exists OR
-	  * Create a hashmap containing configuration parameters and pass it to the service object.
+	  * Create a hashmap containing configuration parameters and pass it to the service object OR
+      * Create a `sdk_config.ini` file and set the PP_CONFIG_PATH constant to point to the directory where this file exists.
    * Instantiate a service wrapper object and a request object as per your project's needs.
    * Invoke the appropriate method on the service object.
 
 For example,
 
 ```php
-	// Sets config file path and registers the classloader
+	// Sets config file path(if config file is used) and registers the classloader
     require("PPBootStrap.php");
+	
+	// Array containing credentials and confiuration parameters. (not required if config file is used)
+	$config = array(
+       'mode' => 'sandbox',
+       'acct1.UserName' => 'jb-us-seller_api1.paypal.com',
+       'acct1.Password' => 'WX4WTU3S8MY44S7F'
+       .....
+    );
 
   	$createAccountRequest = new CreateAccountRequest($requestEnvelope, $name, $address, $preferredLanguageCode);
 	$createAccountRequest->accountType = $accountType;
 	......
 
-	$service  = new AdaptiveAccountsService();
+	$service  = new AdaptiveAccountsService($config);
 	$response = $service->CreateAccount($createAccountRequest);	 
 	if($strtoupper($response->responseEnvelope->ack) == 'SUCCESS') {
 		// Success
@@ -69,7 +77,7 @@ For example,
 The SDK provides multiple ways to authenticate your API call.
 
 ```php
-	$service  = new AdaptiveAccountsService();
+	$service  = new AdaptiveAccountsService($config);
 	
 	// Use the default account (the first account) configured in sdk_config.ini
 	$response = $service->CreateAccount($createAccountRequest);	
@@ -94,12 +102,7 @@ The SDK allows you to configure the following parameters
 
 You can configure the SDK via the sdk_config.ini file.
   
-```php
-    define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
-    $service  = new AdaptiveAccountsService();
-```
-
-Alternatively, dynamic configuration values can be set by passing a map of credential and config values (if config map is passed the config file is ignored)
+Dynamic configuration values can be set by passing a map of credential and config values (if config map is passed the config file is ignored)
 ```php
     $config = array(
        'mode' => 'sandbox',
@@ -109,8 +112,13 @@ Alternatively, dynamic configuration values can be set by passing a map of crede
     );
 	$service  = new AdaptiveAccountsService($config);
 ```
+Alternatively, credential and configuration can be loaded from a file. 
+```php
+    define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
+    $service  = new AdaptiveAccountsService();
+```
 
-Please refer to the sample config file provided with this bundle.
+You can refer full list of configuration parameters in [wiki](https://github.com/paypal/sdk-core-php/wiki/Configuring-the-SDK) page.
 
 
 ## Instant Payment Notification (IPN)
