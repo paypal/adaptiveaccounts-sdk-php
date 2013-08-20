@@ -232,8 +232,9 @@ if($_REQUEST['accountType'] == "Business") {
 /*
  * ## Creating service wrapper object
 	  Creating service wrapper object to make API call 
+	  Configuration::getAcctAndConfig() returns array that contains credential and config parameters
  */
-$service  = new AdaptiveAccountsService();
+$service  = new AdaptiveAccountsService(Configuration::getAcctAndConfig());
 try {
 	/*
 	 *  ## Making API call

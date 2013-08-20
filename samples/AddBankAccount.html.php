@@ -9,6 +9,7 @@
 
 <body>
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 		<div id="header">
 			<h3>Add Bank Account</h3>
 			<div id="apidetails">Set up bank accounts as funding sources for

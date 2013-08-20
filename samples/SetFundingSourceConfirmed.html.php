@@ -9,6 +9,7 @@
 
 <body>
 	<div id="wrapper">
+		<img src="https://devtools-paypal.com/image/bdg_payments_by_pp_2line.png"/>
 		<div id="header">
 			<h3>Set Funding Source Confirmed</h3>
 			<div id="apidetails">Allows your application to mark a funding source
