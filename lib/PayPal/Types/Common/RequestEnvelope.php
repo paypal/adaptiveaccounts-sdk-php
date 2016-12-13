@@ -31,7 +31,13 @@ class RequestEnvelope
 	 * @var string	 
 	 */ 
 	public $errorLanguage;
+	
+	/**
+	 * Constructor with arguments
+	 */
+	public function __construct($errorLanguage = NULL) {
+		$this->errorLanguage = $errorLanguage;
+	}
 
-
-}
+    }
 }
