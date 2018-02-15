@@ -39,6 +39,10 @@ wget  https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable-php5.3/sampl
 php install.php
 ```
 
+## Support
+
+> Please contact [PayPal Technical Support](https://developer.paypal.com/support/) for any live or account issues.
+
 ## Prerequisites
 
 PayPal's PHP Adaptive Accounts SDK requires 
